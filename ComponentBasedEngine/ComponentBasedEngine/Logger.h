@@ -4,7 +4,8 @@
 
 namespace Logging {
 	enum Channels {
-		CHANNEL_GENERAL = 0
+		CHANNEL_GENERAL = 0,
+		CHANNEL_CORE
 	};
 
 	enum VerbosityLevel {
@@ -55,3 +56,10 @@ namespace Logging {
 		ILogTarget* m_logTargets[MAX_NUM_TARGETS];
 	};
 }
+
+#define LOG_DEBUG(channel, fmt, ...)  Logging::Logger::GetSingleton().Log(channel, Logging::LEVEL_DEBUG, fmt, __VA_ARGS__)
+#define LOG_VERBOSE(channel, fmt, ...)  Logging::Logger::GetSingleton().Log(channel, Logging::LEVEL_VERBOSE, fmt, __VA_ARGS__)
+#define LOG_INFO(channel, fmt, ...)  Logging::Logger::GetSingleton().Log(channel, Logging::LEVEL_INFO, fmt, __VA_ARGS__)
+#define LOG_WARN(channel, fmt, ...)  Logging::Logger::GetSingleton().Log(channel, Logging::LEVEL_WARN, fmt, __VA_ARGS__)
+#define LOG_ERROR(channel, fmt, ...)  Logging::Logger::GetSingleton().Log(channel, Logging::LEVEL_ERROR, fmt, __VA_ARGS__)
+#define LOG_FATAL(channel, fmt, ...)  Logging::Logger::GetSingleton().Log(channel, Logging::LEVEL_FATAL, fmt, __VA_ARGS__)

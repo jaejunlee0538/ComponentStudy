@@ -26,9 +26,12 @@
 
 #include <d3d9.h>
 #include <d3dx9.h>
+#include <DxErr.h>
 
 #pragma comment(lib, "d3d9.lib")
 #pragma comment(lib, "d3dx9.lib")
+#pragma comment(lib, "DxErr.lib")
+#pragma comment(lib, "legacy_stdio_definitions.lib")
 
 #include "TimeManager.h"
 #include "Logger.h"

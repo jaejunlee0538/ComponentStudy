@@ -12,6 +12,8 @@ namespace Logging {
 		switch (channel) {
 		case CHANNEL_GENERAL:
 			return "GENERAL";
+		case CHANNEL_CORE:
+			return "CORE";
 		default:
 			assert(false && "정의되지 않은 채널입니다.");
 		}
